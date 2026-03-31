@@ -109,7 +109,8 @@ async function handleTakeTest(req, res) {
             image: readFileSync(filePath),
             imageType: req.file.mimetype,
             resultPredictedClass: prediction.predicted_class,
-            resultPredictedProb: prediction.prediction_probability
+            resultPredictedProb: prediction.prediction_probability,
+            allPredictions: prediction.all_predictions
         });
 
         return res.status(200).json({
@@ -130,7 +131,8 @@ async function handleTestResults(req, res) {
         image: doc.image && doc.image.toString('base64'),
         imageType: doc.imageType,
         prediction: doc.resultPredictedClass,
-        predictionConfidence: doc.resultPredictedProb
+        predictionConfidence: doc.resultPredictedProb,
+        allPredictions: doc.allPredictions || {}
     })
 }
 
@@ -147,7 +149,8 @@ async function handleSharedTestResults(req, res) {
             image: doc.image && doc.image.toString('base64'),
             imageType: doc.imageType,
             prediction: doc.resultPredictedClass,
-            predictionConfidence: doc.resultPredictedProb
+            predictionConfidence: doc.resultPredictedProb,
+            allPredictions: doc.allPredictions || {}
         })
     }
 

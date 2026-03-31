@@ -21,7 +21,8 @@ const userSchema = new mongoose.Schema({
     image: Buffer,
     imageType: String,
     resultPredictedClass: String,
-    resultPredictedProb: String
+    resultPredictedProb: String,
+    allPredictions: { type: Object, default: {} }
 }, {timestamps: true});
 
 const User = mongoose.model('user', userSchema);
