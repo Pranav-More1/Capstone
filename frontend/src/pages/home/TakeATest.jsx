@@ -76,7 +76,7 @@ function TakeATest() {
     }
 
     return (
-        <HomeChild>
+        <HomeChild className="pt-32 lg:pt-40 pb-24 min-h-screen w-full">
             {loading && <LoadingScreen />}
             <div className="w-full grid grid-cols-2 justify-center content-center gap-y-8 gap-x-6">
                 <Heading1 text="Take a test!" className="col-span-full"/>

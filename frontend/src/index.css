@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@layer base {
+  body {
+    @apply bg-[#fcfcfc] dark:bg-black text-text-main dark:text-white font-sans antialiased selection:bg-black/10 dark:selection:bg-white/20 selection:text-black dark:selection:text-white;
+    overflow-x: hidden;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-black/5 dark:border-white/10 shadow-sm;
 }

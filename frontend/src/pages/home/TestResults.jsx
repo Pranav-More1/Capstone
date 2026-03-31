@@ -45,7 +45,7 @@ function TestResults() {
 
 
     return (
-        <HomeChild className="grid grid-cols-2 gap-y-6 auto-rows-max py-8 gap-x-6">
+        <HomeChild className="pt-32 lg:pt-40 pb-24 min-h-screen grid grid-cols-2 gap-y-6 auto-rows-max gap-x-6 w-full">
             <div className="flex gap-3 items-center cursor-pointer col-span-full" onClick={backBtnClick}>
                 <img src={backBtnImg}/>
                 <span>Back</span>
